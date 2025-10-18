@@ -30,11 +30,39 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
 /* Program for 4 Bit Ripple Counter and verify its truth table in quartus using Verilog programming.
 
- Developed by: RegisterNumber:
+ Developed by: RegisterNumber: 25016022
 */
+ 1.Open Quartus software and create a new Verilog file. Paste the code and save it. 2.Compile the program to check for errors. 3.Generate the RTL schematic via the RTL Viewer and save the logic diagram. 4.Use the Waveform Editor to assign nodes for clk, rstn, and out. 5.Simulate the design with different clk and rstn combinations to generate the timing diagram, and save the results.
+
+module exp11(out,clk,rstn);
+input clk,rstn;
+output reg [3:0]out;
+always @ (posedge clk)
+begin
+	if(!rstn)
+		out<=0;
+	else
+		out <= out+1;
+end
+endmodule
 
 **RTL LOGIC FOR 4 Bit Ripple Counter**
 
+<img width="1131" height="453" alt="image" src="https://github.com/user-attachments/assets/ac8233f2-0902-4ead-a449-f1b571272879" />
+
+
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
 
+
+<img width="1180" height="733" alt="image" src="https://github.com/user-attachments/assets/41aa2e71-a280-4671-af8e-ab0da8a02928" />
+
+**TRUTH TABLE**
+
+<img width="668" height="338" alt="image" src="https://github.com/user-attachments/assets/0994a958-86f8-4ad3-a1e2-2dae876ab378" />
+
+
+
+
 **RESULTS**
+
+Thus the Synchronous 3 bit Up counter is implemeted and verified.
